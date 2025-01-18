@@ -25,3 +25,8 @@ some ... realistic endpoint control...good point to fork per product. Then deplo
 1. Create software creation checklist. json. 3 layers. 
 -
 
+
+
+### Calendar
+- 1/28/25 second to last python 3.13 starts bugfix phase q4-24 - q3-29. as good as it gets
+

@@ -1,7 +1,16 @@
 version: '2'
 services:
   httpbin:
-    container_name: pytest
+    container_name: httpbin
     image: "kennethreitz/httpbin"
     ports:
       - "8000:80"
+  pytest:
+    container_name: pytest
+    image: "python:3.13"
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: "pip install -r requirements.txt && pytest"
+    depends_on:
+      - httpbin
