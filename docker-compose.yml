@@ -6,8 +6,8 @@ services:
     ports:
       - "8000:80"
   pytest:
-    #add build from docker file at ./
     container_name: pytest
+    build: ./localSrc/pytest  # Add build from Dockerfile at ./localSrc/pytest
     image: "python:3.13"
     volumes:
       - ./:/app
