@@ -15,11 +15,11 @@ services:
       - ./:/app
     depends_on:
       - httpbin
-  script_runner:
+  reflexive:
     image: alpine
     profiles:
       - reflexive
-    command: sh -c "echo 'Running script in my_profile...some day I will say "docker compose up!!!!!!"" like a super hero' && sleep 10"
+    command: sh -c "echo 'Running script in my_profile...some day I will say docker compose up!!!!!! TODO...close off the ports of whatever THIS docker compose ups like a super hero' && sleep 10"
   
   #localstack
   #jenkins? CircleCI?Travis? okboomer....forget it and use the ci cd on aws OR github....TODO is use github hooks anywho. 
@@ -31,7 +31,7 @@ services:
   # some commercial free open source monitoring and or logging
   # some front end cloud front thought process/aws scalability/cost.
   # mongo db just to be cool and idk wtf schemas I be savin 
-  # git automation server for ai trying stuff
+  # git automation server for ai trying stuff 
   # time based chrono server thingy, launch agents 
   # hugging bear/openapi server if not a page in the docs.
 
