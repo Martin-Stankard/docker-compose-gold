@@ -6,15 +6,15 @@ some ... realistic endpoint control...good point to fork per product. Then deplo
 This probably ends up at scratching aws with a security credential ugly hack/test it, see it, tear it down, delete everything I can think of then fork ... then clean up/gussy up my hack as "documentation" here in all likelyhood, and go dark. That is the goal.
 
 
-###Overview
+### Overview 
 - ```docker compose up``` to run it
 -- all local, all the time
 -- postman.local.cfg && use cases/better than  a readme
 
-- ```docker compose -profile test up``` to test
+- ```docker compose -profile test up``` to test WIP
 -- including running another of itself/docker compose
 
-- ```docker compose -profile deploy up``` to run local monitor and deploy to aws
+- ```docker compose -profile deploy up``` to run local monitor and deploy to aws WIP
 -- different local react app
 
 
