@@ -10,12 +10,12 @@ services:
   # some on reflexive script...ok...would need to run another container alpine image...and pytest can hit that...ugg performance to see. 
     container_name: pytest
     build: ./localSrc/pytest  # Add build from Dockerfile at ./localSrc/pytest
-    image: "python:3.13"
+    
     volumes:
-      - ./:/app
+      - pytest:/app
     depends_on:
       - httpbin
-  reflexive:
+  reflexive: #this it to test the tester. normal ( auto unit w/e ) tests) + docker compose big picture + in/out of docker compose? I want  it tight.
     image: alpine
     profiles:
       - reflexive
@@ -36,3 +36,5 @@ services:
   # hugging bear/openapi server if not a page in the docs.
 
 
+volumes:
+  pytest:
