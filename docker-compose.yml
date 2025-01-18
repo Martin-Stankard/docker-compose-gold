@@ -27,7 +27,7 @@ services:
   ### a test script, a build script; for the foreseaable future; docker compose up will be equivalent to future stable 1.0 profile test, env == TEST
   ### so on a prod branch on merge; tests, ask if any human only steps, builds images 
   #local react, tracks tests run? documentation? Test coverage? Minor monitoring. My Martin tree to green
-  ### ... react tab per < serviceidk.com / port / ? switch at top lol...reads docker compose stuff <3 >
+  ### ... react tab per < serviceidk.com / port / ? > switch at top lol...reads docker compose stuff <3 >
   # some commercial free open source monitoring and or logging
   # some front end cloud front thought process/aws scalability/cost.
   # mongo db just to be cool and idk wtf schemas I be savin 
