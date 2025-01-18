@@ -1,16 +1,19 @@
 ## Docker Compose Gold
 =====================
+dev goal: take this up to localstack; an S3 static react app, some db use, some lambda use....
+some ... realistic endpoint control...good point to fork per product. Then deploy stuff.
+
 
 ###Overview
 - ```docker compose up``` to run it
 -- all local, all the time
--- postman.local.cfg && use
+-- postman.local.cfg && use cases/better than  a readme
 
 - ```docker compose -profile test up``` to test
 -- including running another of itself/docker compose
 
 - ```docker compose -profile deploy up``` to run local monitor and deploy to aws
--- some local react app/may piggy back off 
+-- different local react app
 
 
 - test with a pytest service.
@@ -18,8 +21,6 @@
 
 - test with postman, hopefully automated with a fun manual path.
 
-- I want to see a test coverage report, maybe a wiki doc thing appears around the coverage report. 
+### Agents
+1. Create software creation checklist. json. 3 layers. 
 
-
-- 3.0 lol, if I get a server) k8s, some local data dog like thing. Lol....heck of a local dev footprint if I want to
-      "do everything on aws" because I KNOW I am deploying from github.
