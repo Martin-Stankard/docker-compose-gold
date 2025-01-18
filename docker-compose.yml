@@ -1,4 +1,4 @@
-version: '2'
+version: "3.9"
 services:
   httpbin:
     container_name: httpbin
@@ -6,6 +6,8 @@ services:
     ports:
       - "8000:80"
   pytest:
+  # I think this thing can eventually....I guess with a weird prophile reflexive? can "docker compose up" this-./ in itself.
+  # some on reflexive script...ok...would need to run another container alpine image...and pytest can hit that...ugg performance to see. 
     container_name: pytest
     build: ./localSrc/pytest  # Add build from Dockerfile at ./localSrc/pytest
     image: "python:3.13"
@@ -13,6 +15,12 @@ services:
       - ./:/app
     depends_on:
       - httpbin
+  script_runner:
+    image: alpine
+    profiles:
+      - reflexive
+    command: sh -c "echo 'Running script in my_profile...some day I will say "docker compose up!!!!!!"" like a super hero' && sleep 10"
+  
   #localstack
   #jenkins? CircleCI?Travis? okboomer....forget it and use the ci cd on aws OR github....TODO is use github hooks anywho. 
   ### CI CD will be, FOR NOW, get it off github into aws asap here so JUST pytest log/react and build container's maybe...
@@ -26,4 +34,5 @@ services:
   # git automation server for ai trying stuff
   # time based chrono server thingy, launch agents 
   # hugging bear/openapi server if not a page in the docs.
+
 
