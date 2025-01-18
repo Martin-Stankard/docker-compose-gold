@@ -1,8 +1,10 @@
 # Design Document
 
-## Agent Use Principle
+## Agent Use Principles
 
 ### Initial "1000 Points" of General Software Creation
+
+**Agent 0**: create 1000 points json
 
 **Agent 1**: Given a 5-sentence start, "I want a webapp that..."
 - Returns: A sophisticated, long-winded, technical outline.
