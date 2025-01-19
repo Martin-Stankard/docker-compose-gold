@@ -1,10 +1,12 @@
 version: "3.9"
 services:
-  httpbin:
-    container_name: httpbin
-    image: "kennethreitz/httpbin"
-    ports:
-      - "8000:80"
+  
+  # httpbin: #tbd, might just be to demo pytest, and will go away with localstack up. https://pypi.org/project/pytest-docker/
+  #   container_name: httpbin
+  #   image: "kennethreitz/httpbin"
+  #   ports:
+  #     - "8000:80"
+
   pytest:
   # I think this thing can eventually....I guess with a weird prophile reflexive? can "docker compose up" this-./ in itself.
   # some on reflexive script...ok...would need to run another container alpine image...and pytest can hit that...ugg performance to see. 
@@ -15,26 +17,55 @@ services:
       - pytest:/app
     depends_on:
       - httpbin
+  networks:
+        - golden-internal-network
+        - golden-external-network
+
   reflexive: #this it to test the tester. normal ( auto unit w/e ) tests) + docker compose big picture + in/out of docker compose? I want  it tight.
     image: alpine
     profiles:
       - reflexive
     command: sh -c "echo 'Running script in my_profile...some day I will say docker compose up!!!!!! TODO...close off the ports of whatever THIS docker compose ups like a super hero' && sleep 10"
-  
+    networks:
+        - golden-internal-network
+        - golden-external-network
+
   #localstack
+  
+  
   #jenkins? CircleCI?Travis? okboomer....forget it and use the ci cd on aws OR github....TODO is use github hooks anywho. 
   ### CI CD will be, FOR NOW, get it off github into aws asap here so JUST pytest log/react and build container's maybe...
   ### a test script, a build script; for the foreseaable future; docker compose up will be equivalent to future stable 1.0 profile test, env == TEST
-  ### so on a prod branch on merge; tests, ask if any human only steps, builds images 
+  ### so on a prod branch on merge; tests, then kicks off github.
+  
+  
   #local react, tracks tests run? documentation? Test coverage? Minor monitoring. My Martin tree to green
   ### ... react tab per < serviceidk.com / port / ? > switch at top lol...reads docker compose stuff <3 >
-  # some commercial free open source monitoring and or logging
-  # some front end cloud front thought process/aws scalability/cost.
+  
+  # some commercial free open source monitoring and or logging: k8s feels dumb pre aws or server 2. 
+  
+
+  # some front end cloud front thought process/aws scalability/cost. Probably something weird/vim crowd; fake/mock internet risk
+
+
   # mongo db just to be cool and idk wtf schemas I be savin 
+  
+  
   # git automation server for ai trying stuff 
+  
+  
   # time based chrono server thingy, launch agents 
+  
+  
   # hugging bear/openapi server if not a page in the docs.
 
 
 volumes:
   pytest:
+
+networks:
+  golden-internal-network:
+    internal: true
+  golden-external-network:
+    internal: false
+    
