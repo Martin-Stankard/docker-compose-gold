@@ -26,6 +26,28 @@ print("hello from reflexive land")
 
 # brute force port scan on all containers in network
 
+# For available scopes and descriptions see https://docs.pytest.org/en/6.2.x/fixture.html#fixture-scopes
+
+# docker_ip
+# Determine the IP address for TCP connections to Docker containers.
+
+# docker_compose_file
+# Get an absolute path to the docker-compose.yml file. Override this fixture in your tests if you need a custom location.
+
+# docker_compose_project_name
+# Generate a project name using the current process PID. Override this fixture in your tests if you need a particular project name.
+
+# docker_services
+# Start all services from the docker compose file (docker-compose up). After test are finished, shutdown all services (docker-compose down).
+
+# docker_compose_command
+# Docker Compose command to use to execute Dockers. Default is to use Docker Compose V2 (command is docker compose). If you want to use Docker Compose V1, change this fixture to return docker-compose.
+
+# docker_setup
+# Get the list of docker_compose commands to be executed for test spawn actions. Override this fixture in your tests if you need to change spawn actions. Returning anything that would evaluate to False will skip this command.
+
+# docker_cleanup
+# Get the list of docker_compose commands to be executed for test clean-up actions. Override this fixture in your tests if you need to change clean-up actions. Returning anything that would evaluate to False will skip this command.
 
 
 
