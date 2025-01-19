@@ -1,4 +1,4 @@
 import os
 
-name = os.getenv('NAME')
+name = os.getenv('PROFILE')
 print(f"Hello, {name}!")

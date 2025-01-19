@@ -13,8 +13,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Make port 80 available to the world outside this container
 EXPOSE 80
 
-# Define environment variable
-ENV NAME asdf
+# Define environment variable. TODO, this should be a parameter passed in from the docker-compose.yml file/profile would be ideal.
+ENV PROFILE TEST
 
 # Run app.py when the container launches
 CMD ["python", "hello.py"] 
