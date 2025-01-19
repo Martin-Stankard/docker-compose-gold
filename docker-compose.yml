@@ -12,14 +12,11 @@ services:
   # some on reflexive script...ok...would need to run another container alpine image...and pytest can hit that...ugg performance to see. 
     container_name: pytest
     build: ./localSrc/pytest  # Add build from Dockerfile at ./localSrc/pytest
-    
-    volumes:
-      - pytest:/app
-    depends_on:
-      - httpbin
-  networks:
-        - golden-internal-network
-        - golden-external-network
+    # depends_on:
+    #   - httpbin
+    networks:
+          - golden-internal-network
+          # - golden-external-network
 
   reflexive: #this it to test the tester. normal ( auto unit w/e ) tests) + docker compose big picture + in/out of docker compose? I want  it tight.
     container_name: reflexive
@@ -28,7 +25,7 @@ services:
       - reflexive
     networks:
         - golden-internal-network
-        - golden-external-network
+        # - golden-external-network
 
   #localstack
   

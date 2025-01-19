@@ -1,19 +1,3 @@
-# This 
-
-image: alpine
-
-
-
-
-
-
-
-
-
-command: sh -c "echo 'Running script in my_profile...some day I will say docker compose up!!!!!! TODO...close off the ports of whatever THIS docker compose ups like a super hero' && sleep 10"
-
-
-
 # Use an official Python runtime as a parent image
 FROM python:3.13.1-slim
 
@@ -33,4 +17,4 @@ EXPOSE 80
 ENV PROFILE REFLEXIVE
 
 # Run app.py when the container launches
-CMD ["python", "testDcReflex.py.py"] 
+CMD ["python", "testDcReflex.py"] 
