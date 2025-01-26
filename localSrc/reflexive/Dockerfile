@@ -11,7 +11,7 @@ COPY ./src /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Make port 80 available to the world outside this container
-EXPOSE 80
+# EXPOSE 80 #TODO clean this up if it works out in the docker-c.yml as "127.0.0.1:8080:80"  a la https://www.bitdoze.com/docker-bypasses-firewall/
 
 # Define environment variable. FINAL only ? service specifoc 
 ENV PROFILE REFLEXIVE

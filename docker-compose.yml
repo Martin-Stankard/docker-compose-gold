@@ -21,6 +21,8 @@ services:
   reflexive: #this it to test the tester. normal ( auto unit w/e ) tests) + docker compose big picture + in/out of docker compose? I want  it tight.
     container_name: reflexive
     build: ./localSrc/reflexive  # Add build from Dockerfile at ./localSrc/pytest
+    ports:
+      - "127.0.0.1:8080:80"
     profiles:
       - reflexive
     networks:
@@ -29,6 +31,8 @@ services:
 
   #localstack
   
+  #BREAK FOR AWS SETUP. Make first s3 away app documentation/llm usage/logger; something off of name-coded txts. Minimal react, 
+  # for each MENU_*.txt in this folder, yada yadalol
   
   #jenkins? CircleCI?Travis? okboomer....forget it and use the ci cd on aws OR github....TODO is use github hooks anywho. 
   ### CI CD will be, FOR NOW, get it off github into aws asap here so JUST pytest log/react and build container's maybe...

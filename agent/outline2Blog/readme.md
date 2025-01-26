@@ -29,4 +29,4 @@ feature > tests > comments > code ..... just 3 writing prompts...can even be a c
 That happens here...overnight, wake up to unit tests; 
 
 
-...subdividing just making tests, 1st pass hardcode pass. Git commit.
+...subdividing just making tests, 1st pass hardcode pass. Run tests. Git commit. Like....5.0.0 might be able to efficiently code and not run all tests....
