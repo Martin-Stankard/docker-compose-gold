@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   
   # httpbin: #tbd, might just be to demo pytest, and will go away with localstack up. https://pypi.org/project/pytest-docker/
@@ -8,10 +7,8 @@ services:
   #     - "8000:80"
 
   pytest:
-  # I think this thing can eventually....I guess with a weird prophile reflexive? can "docker compose up" this-./ in itself.
-  # some on reflexive script...ok...would need to run another container alpine image...and pytest can hit that...ugg performance to see. 
     container_name: pytest
-    build: ./localSrc/pytest  # Add build from Dockerfile at ./localSrc/pytest
+    build: ./localSrc/pytest  
     # depends_on:
     #   - httpbin
     networks:
@@ -23,8 +20,8 @@ services:
     build: ./localSrc/reflexive  # Add build from Dockerfile at ./localSrc/pytest
     ports:
       - "127.0.0.1:8080:80"
-    profiles:
-      - reflexive
+    # profiles:
+    #   - reflexive
     networks:
         - golden-internal-network
         # - golden-external-network
