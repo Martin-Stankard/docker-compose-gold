@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 80
 
 # Define environment variable. TODO, this should be a parameter passed in from the docker-compose.yml file/profile would be ideal.
-ENV PROFILE REFLEXIVE
+# ENV PROFILE REFLEXIVE
 
 # Run app.py when the container launches
-CMD ["python", "hello.py"] 
+CMD ["python", "hello.py"]

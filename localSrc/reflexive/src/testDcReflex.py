@@ -1,7 +1,7 @@
 #pytest
 import os
 
-name = os.getenv('PROFILE')
+name = os.getenv('ZAB')
 print(f"Hello, {name}!")
 
 

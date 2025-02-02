@@ -9,6 +9,8 @@ services:
   pytest:
     container_name: pytest
     build: ./localSrc/pytest  
+    environment:
+      - ZAB=${COMPOSE_PROFILES}
     # depends_on:
     #   - httpbin
     networks:
@@ -23,7 +25,8 @@ services:
     profiles:
        - reflexive
        - reftest
-       
+    environment:
+      - ZAB=${COMPOSE_PROFILES}
     networks:
         - golden-internal-network
         # - golden-external-network
@@ -68,3 +71,7 @@ networks:
     internal: true
   golden-external-network:
     internal: false
+
+# Set the default profile if not provided
+x-environment:
+  PROFILE: &default_profile ${PROFILE:-default}
