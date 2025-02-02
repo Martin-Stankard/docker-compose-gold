@@ -20,8 +20,8 @@ services:
     build: ./localSrc/reflexive  # Add build from Dockerfile at ./localSrc/pytest
     ports:
       - "127.0.0.1:8080:80"
-    # profiles:
-    #   - reflexive
+    profiles:
+       - reflexive,reftest 
     networks:
         - golden-internal-network
         # - golden-external-network
