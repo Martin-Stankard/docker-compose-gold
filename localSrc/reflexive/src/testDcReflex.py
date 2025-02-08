@@ -8,7 +8,17 @@ print(f"Hello, {name}!")
 
 print("hello from reflexive land")
 
+
+# AND I don't care about environment variables for --profile reflxive
+# AND instead something like 
+
+
+
+
+# git clone "this"...put this somewhere smart, top level config...SOME...my original genius idea
 #run docker compose up from /app....
+
+
 
 #maybe a check on containers up and running test every five seconds until ALL UP
 

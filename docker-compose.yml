@@ -25,6 +25,8 @@ services:
     profiles:
        - reflexive
        - reftest
+       # boom beakthrough thought...probably going to just use reflexive, then some kind of runntime check....in this service
+       # am I being run by "user command level"....
     environment:
       - ZAB=${COMPOSE_PROFILES}
     networks:
