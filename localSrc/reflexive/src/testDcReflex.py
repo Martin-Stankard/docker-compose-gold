@@ -9,8 +9,8 @@ print(f"Hello, {name}!")
 print("hello from reflexive land")
 
 
-# AND I don't care about environment variables for --profile reflxive
-# AND instead something like 
+# AND I don't care about environment variables for --profile reflexive
+# AND instead something like https://docs.docker.com/reference/dockerfile/#env ?
 
 
 
