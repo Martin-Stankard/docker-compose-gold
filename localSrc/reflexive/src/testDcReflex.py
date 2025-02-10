@@ -6,14 +6,11 @@ print(f"Hello, ZAB env variable defined in ../../../docker-compose.yml: {name}!"
 print("hello from reflexive service land...")
 
 
-# AND I don't care about environment variables for --profile reflexive
-# AND instead something like https://docs.docker.com/reference/dockerfile/#env ?
-
-
 
 
 # git clone "this"...put this somewhere smart, top level config...SOME...my original genius idea
 #run docker compose up from /app....
+
 
 
 
