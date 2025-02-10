@@ -1,77 +1,23 @@
 services:
   
-  # httpbin: #tbd, might just be to demo pytest, and will go away with localstack up. https://pypi.org/project/pytest-docker/
-  #   container_name: httpbin
-  #   image: "kennethreitz/httpbin"
-  #   ports:
-  #     - "8000:80"
-
   pytest:
     container_name: pytest
     build: ./localSrc/pytest  
     environment:
       - ZAB=asdf
-    # depends_on:
-    #   - httpbin
     networks:
           - golden-internal-network
           # - golden-external-network
 
-  reflexive: #this it to test the tester. normal ( auto unit w/e ) tests) + docker compose big picture + in/out of docker compose? I want  it tight.
+  reflexive: 
     container_name: reflexive
     build: ./localSrc/reflexive  # Add build from Dockerfile at ./localSrc/pytest
-    privileged: true
     ports:
       - "127.0.0.1:8080:80"  
-    profiles:
-       - reflexive
     environment:
       - ZAB=asdf
     networks:
         - golden-internal-network
-        # - golden-external-network
+        
 
-  #localstack
-  
-  #BREAK FOR AWS SETUP. Make first s3 away app documentation/llm usage/logger; something off of name-coded txts. Minimal react, 
-  # for each MENU_*.txt in this folder, yada yadalol
-  
-  #jenkins? CircleCI?Travis? okboomer....forget it and use the ci cd on aws OR github....TODO is use github hooks anywho. 
-  ### CI CD will be, FOR NOW, get it off github into aws asap here so JUST pytest log/react and build container's maybe...
-  ### a test script, a build script; for the foreseaable future; docker compose up will be equivalent to future stable 1.0 profile test, env == TEST
-  ### so on a prod branch on merge; tests, then kicks off github.
-  
-  
-  #local react, tracks tests run? documentation? Test coverage? Minor monitoring. My Martin tree to green
-  ### ... react tab per < serviceidk.com / port / ? > switch at top lol...reads docker compose stuff <3 >
-  
-  # some commercial free open source monitoring and or logging: k8s feels dumb pre aws or server 2. 
-  
-
-  # some front end cloud front thought process/aws scalability/cost. Probably something weird/vim crowd; fake/mock internet risk
-
-
-  # mongo db just to be cool and idk wtf schemas I be savin 
-  
-  
-  # git automation server for ai trying stuff 
-  
-  
-  # time based chrono server thingy, launch agents 
-  
-  
-  # hugging bear/openapi server if not a page in the docs.
-
-
-volumes:
-  pytest:
-
-networks:
-  golden-internal-network:
-    internal: true
-  golden-external-network:
-    internal: false
-
-# Set the default profile if not provided
-x-environment:
-  PROFILE: &default_profile ${PROFILE:-default}
+  # [localstack and aws source code] will be in its own repo. TBD if this lives as a seperate testing/coding unit

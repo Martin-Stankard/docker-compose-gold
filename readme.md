@@ -1,26 +1,20 @@
-## Docker Compose Gold
+# Docker Compose Gold
 =====================
-dev goal: take this up to localstack; an S3 static react app, some db use, some lambda use....
-some ... realistic endpoint control...good point to fork per product. Then deploy stuff.
-
-This probably ends up at scratching aws with a security credential ugly hack/test it, see it, tear it down, delete everything I can think of then fork ... then clean up/gussy up my hack as "documentation" here in all likelyhood, and go dark. That is the goal.
-
+Dead for now. 
 
 ### Overview 
 - ```docker compose up``` to run it
--- all local, all the time
--- postman.local.cfg && use cases/better than  a readme
+-- all local, all the time 
 
-All of the reflexive ideas are probably dead/less than this https://github.com/jpetazzo/dind
-- which calls itself obsolete in favor of:
-```docker run --privileged -d docker:dind``` tbd/tbExplored...obvi...
+- Right now this is just placeholders
+- Goal was an ollama tdd code-bot framework that was focused on keeping a "docker compose up" happy and tested while adding features
+- Goal is an ollama, multi-agent, tdd code-bot framework, with git and excessive unit testing
 
-### Agents
-1. Create software creation checklist. json. 3 layers. 
--
+* given a feature request, an app that runs from docker compose, and decent unit tests*
+- big tbd, 
+-- lots of git safety every step; assume a commit and a unit test run before each of those; every step), a new feature branch, "tdd"
+- feature-prompt > high level plan > files new and old > methods > test case comments > 
+- For each commented test case:
+-- create code fail test > create code pass test > look for more tests
 
-
-
-### Calendar
-- 1/28/25 second to last python 3.13 starts bugfix phase q4-24 - q3-29. as good as it gets
-
+- wake up to new feature branch with a bunch of tests in the bag at least.

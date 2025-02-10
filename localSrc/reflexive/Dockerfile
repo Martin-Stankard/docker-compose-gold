@@ -11,6 +11,7 @@ COPY ./src /app
 RUN apk update && apk add git
 
 RUN git clone https://github.com/Martin-Stankard/docker-compose-gold.git
+#
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt

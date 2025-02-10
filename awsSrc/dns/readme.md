@@ -1,1 +1,0 @@
-need to buy a domain, Super cheap for this , golden template app
