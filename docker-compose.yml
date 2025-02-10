@@ -10,7 +10,7 @@ services:
     container_name: pytest
     build: ./localSrc/pytest  
     environment:
-      - ZAB=${COMPOSE_PROFILES}
+      - ZAB=asdf
     # depends_on:
     #   - httpbin
     networks:
@@ -28,7 +28,7 @@ services:
        # boom beakthrough thought...probably going to just use reflexive, then some kind of runntime check....in this service
        # am I being run by "user command level"....
     environment:
-      - ZAB=${COMPOSE_PROFILES}
+      - ZAB=asdf
     networks:
         - golden-internal-network
         # - golden-external-network
