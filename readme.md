@@ -11,24 +11,9 @@ This probably ends up at scratching aws with a security credential ugly hack/tes
 -- all local, all the time
 -- postman.local.cfg && use cases/better than  a readme
 
-- ```docker compose -profile test up``` to test WIP
--- all "normal" automatable tests
-
-- ```docker compose -profile reflexive up``` CURRENT DEFAULT WIP
--- THIS docker compose system, external tests; then "normal" tests
-
-- ```docker compose -profile deploy up``` to run local monitor and deploy to aws WIP
--- different local react app to communicate NUCLEAR LAUNCH GO? runs tests....maybe singleton thingie run from git merge into deploy branch?
-== could JUST be a script, phone home github. Redploy deploy branch/ sre break glass...lol....react app calls that script.
-
-- ```docker compose -profile monitor up``` stuff on AWS
--- idk...could be react app just showing shortcuts to aws, local server might make k8s smart/fun. Feels like 26 realistically.
-
-
-- test with a pytest service.
--- maybe something fancy to connect tests to design docs...I want more ai ppt slides
-
-- test with postman, hopefully automated with a fun manual path.
+All of the reflexive ideas are probably dead/less than this https://github.com/jpetazzo/dind
+- which calls itself obsolete in favor of:
+```docker run --privileged -d docker:dind``` tbd/tbExplored...obvi...
 
 ### Agents
 1. Create software creation checklist. json. 3 layers. 
