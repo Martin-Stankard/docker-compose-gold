@@ -5,16 +5,27 @@ print(f"Hello, ZAB env variable defined in ../../../docker-compose.yml: {name}!"
 
 print("hello from reflexive service land...")
 
+# Create and save a file hello.txt with content "asdf"
+with open("hello.txt", "w") as file:
+    file.write("asdf")
+
+print("file write did not crash out at least ...")
+
+# Check if the file hello.txt exists and print its contents
+if os.path.isfile("hello.txt"):
+    print("hello.txt exists")
+    with open("hello.txt", "r") as file:
+        content = file.read()
+        print(f"Contents of hello.txt: {content}")
+else:
+    print("hello.txt does not exist")
+
+# possible top to bottom conceptual redeau https://github.com/jpetazzo/dind
+#If you want to run Docker-in-Docker today, all you need to do is:
+
+#docker run --privileged -d docker:dind
 
 
-
-# git clone "this"...put this somewhere smart, top level config...SOME...my original genius idea
-#run docker compose up from /app....
-
-
-
-
-#maybe a check on containers up and running test every five seconds until ALL UP
 
 #Begin tests
 
@@ -26,7 +37,6 @@ print("hello from reflexive service land...")
 
 # docker network create --subnet
 # why .... maybe...lol...this stablilizes and 2 forked projects off of this stabilize and are managed in one of these.
-
 
 # brute force port scan on all containers in network
 
@@ -52,7 +62,5 @@ print("hello from reflexive service land...")
 
 # docker_cleanup
 # Get the list of docker_compose commands to be executed for test clean-up actions. Override this fixture in your tests if you need to change clean-up actions. Returning anything that would evaluate to False will skip this command.
-
-
 
 # finally kick off "normal, non reflexive testing" in pytest, across golden-internal-network/ and/or golden-external-network/
