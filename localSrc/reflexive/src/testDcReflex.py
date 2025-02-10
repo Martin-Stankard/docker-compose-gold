@@ -1,12 +1,9 @@
-#pytest
 import os
 
 name = os.getenv('ZAB')
-print(f"Hello, {name}!")
+print(f"Hello, ZAB env variable defined in ../../../docker-compose.yml: {name}!")
 
-
-
-print("hello from reflexive land")
+print("hello from reflexive service land...")
 
 
 # AND I don't care about environment variables for --profile reflexive
