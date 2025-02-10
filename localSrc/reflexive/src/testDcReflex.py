@@ -11,6 +11,11 @@ with open("hello.txt", "w") as file:
 
 print("file write did not crash out at least ...")
 
+# Print out the equivalent of an "ls ./" command
+print("Contents of current directory:")
+for item in os.listdir("."):
+    print(item)
+
 # Check if the file hello.txt exists and print its contents
 if os.path.isfile("hello.txt"):
     print("hello.txt exists")

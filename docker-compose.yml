@@ -20,6 +20,7 @@ services:
   reflexive: #this it to test the tester. normal ( auto unit w/e ) tests) + docker compose big picture + in/out of docker compose? I want  it tight.
     container_name: reflexive
     build: ./localSrc/reflexive  # Add build from Dockerfile at ./localSrc/pytest
+    privileged: true
     ports:
       - "127.0.0.1:8080:80"  
     profiles:
